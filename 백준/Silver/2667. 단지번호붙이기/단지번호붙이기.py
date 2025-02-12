@@ -1,43 +1,43 @@
-n = int(input())  # 지도 크기 N
+n = int(input())  # 지도 크기 N 입력
+
 graph = []
-counts = []  # 각 단지별 집의 수를 저장할 리스트
+counts = []  # 각 단지의 집의 수를 저장할 리스트
 
 # 지도 입력 받기
 for i in range(n):
-    graph.append(list(map(int, input())))
+    graph.append(list(map(int, input().strip())))  # 1과 0으로 이루어진 지도 입력
 
-# 상, 하, 좌, 우로 탐색 (상, 하, 좌, 우 인덱스 변화)
-dx = [-1, 1, 0, 0]
-dy = [0, 0, -1, 1]
-
+# DFS 함수 정의
 def dfs(x, y):
-    if x < 0 or y < 0 or x >= n or y >= n:  # 범위를 벗어나면 종료
-        return 0
+    # 지도 밖으로 나가는 경우
+    if x < 0 or y < 0 or x >= n or y >= n:
+        return 0  # 유효한 위치가 아니면 0 반환
+    
+    if graph[x][y] == 1:  # 집이 있는 곳이라면
+        graph[x][y] = 0  # 방문한 집은 0으로 바꾸고
+        count = 1  # 해당 집은 1개 집이므로 시작 count는 1
+        
+        # 상, 하, 좌, 우로 탐색 (주변 집을 찾기 위해 재귀 호출)
+        count += dfs(x-1, y)
+        count += dfs(x+1, y)
+        count += dfs(x, y-1)
+        count += dfs(x, y+1)
+        
+        return count  # 단지 내 집의 수를 반환
+    return 0  # 집이 없으면 0 반환
 
-    if graph[x][y] == 0:  # 집이 없으면 종료
-        return 0
-
-    graph[x][y] = 0  # 방문한 집은 0으로 처리
-    count = 1  # 현재 집은 하나를 세므로 count는 1
-
-    # 4방향으로 탐색
-    for i in range(4):
-        nx = x + dx[i]
-        ny = y + dy[i]
-        count += dfs(nx, ny)  # 인접한 집을 찾으며 count를 누적
-
-    return count  # 탐색이 끝난 후 그 단지의 집 개수 반환
-
-# 모든 집을 탐색하며 단지 수와 집의 수를 구하기
+# 지도 순회하며 DFS 실행
 for i in range(n):
     for j in range(n):
-        if graph[i][j] == 1:  # 집이 있으면
-            count = dfs(i, j)  # 해당 집을 시작으로 단지 탐색
-            if count > 0:  # 집을 찾으면 단지 수에 추가
-                counts.append(count)
+        if graph[i][j] == 1:  # 집을 발견했으면 DFS 실행
+            count = dfs(i, j)  # 단지의 집의 수 구하기
+            if count > 0:  # 집이 있었다면
+                counts.append(count)  # 단지 내 집의 수를 counts 리스트에 추가
 
-# 결과 출력
-counts.sort()  # 단지별 집의 수 오름차순 정렬
-print(len(counts))  # 단지의 개수 출력
+# 단지 수 출력
+print(len(counts))
+
+# 각 단지의 집의 수 오름차순으로 정렬하여 출력
+counts.sort()
 for count in counts:
-    print(count)  # 각 단지의 집의 수 출력
+    print(count)
