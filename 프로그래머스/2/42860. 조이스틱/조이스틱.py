@@ -7,8 +7,9 @@ def solution(name):
 
         next= i+1
 
-        while next <len(name) and name[next]=='A':
-            next+=1
-
-        cursor_move=min([cursor_move, 2*i+len(name)-next, i+2*(len(name)-next)])
-    return cursor_move+ spell_move
+        while next<len(name) and name[next] =='A':
+            next +=1
+        
+        cursor_move =min([cursor_move, i*2+len(name)-next, i+2*(len(name)-next)])
+    
+    return cursor_move + spell_move
