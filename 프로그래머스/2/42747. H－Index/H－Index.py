@@ -1,8 +1,9 @@
 def solution(citations):
-    answer = 0
+    answer=0
     citations.sort(reverse=True)
-    
-    for i in range(len(citations)):
+
+    for i in range(0,len(citations)):
         if citations[i]<i+1:
             return i
+    
     return len(citations)
