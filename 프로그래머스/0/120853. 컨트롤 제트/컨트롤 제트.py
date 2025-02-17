@@ -1,13 +1,13 @@
 def solution(s):
-    answer = 0
-    ans=[]
+    answer =0
+    stack =[]
+    
     s= s.split(' ')
     for i in s:
         if i !='Z':
-            ans.append(int(i))
+            stack.append(int(i))
         else:
-            ans.pop()
-        
-    answer= sum(ans)
-    
+            stack.pop()
+
+    answer=sum(stack)    
     return answer
