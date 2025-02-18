@@ -1,15 +1,16 @@
 def solution(numbers, target):
-    leavse=[0]
-
+    leaves=[0]
+    result=0
     for i in numbers:
         tmp =[]
-        for j in leavse:
+
+        for j in leaves:
             tmp.append(j+i)
             tmp.append(j-i)
-        leavse=tmp
+        leaves=tmp
     
-    result=0
-    for i in leavse:
-        if i ==target:
+    for i in leaves:
+
+        if i==target:
             result+=1
     return result
