@@ -11,8 +11,6 @@ def solution(scovile, K):
             return -1
         else:
             a=heapq.heappop(scovile)+2*(heapq.heappop(scovile))
-            heapq.heappush(scovile,a)
+            heapq.heappush(scovile,a) 
             c+=1
-   
 
-    
