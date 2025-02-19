@@ -1,5 +1,4 @@
 def solution(number, k):
-
     stack =[]
 
     for num in number:
@@ -7,8 +6,7 @@ def solution(number, k):
             stack.pop()
             k-=1
         stack.append(num)
-    
-    if k !=0:
-        stack= stack[:-k]
-    
+
+    if k!=0:
+        stack =stack[:-k]
     return ''.join(stack)
