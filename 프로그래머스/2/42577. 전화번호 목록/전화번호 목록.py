@@ -8,7 +8,6 @@ def solution(phone_book):
         answer=''
         for num in nums:
             answer+=num
-            
-            if answer in hash_map and answer !=nums:
+            if answer != nums and answer in hash_map:
                 return False
     return True
