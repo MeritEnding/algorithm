@@ -4,13 +4,13 @@ def solution(begin,target,words):
         return 0
     else:
         return bfs(begin,target,words)
-    
+
 def bfs(begin, target, words):
-    queue= deque()
+    queue =deque()
     queue.append([begin,0])
     
     while queue:
-        now ,step = queue.popleft()
+        now, step= queue.popleft()
         
         if now ==target:
             return step
@@ -18,8 +18,7 @@ def bfs(begin, target, words):
         for word in words:
             count=0
             for i in range(len(now)):
-                if now[i]!=word[i]:
+                if now[i]!= word[i]:
                     count+=1
             if count ==1:
-                queue.append([word,step+1])
-        
+                queue.append([word, step+1])
