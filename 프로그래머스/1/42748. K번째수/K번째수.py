@@ -1,6 +1,7 @@
 def solution(array,commands):
     ans=[]
-    answer =[]
+    answer=[]
+    
     for i in commands:
         ans =array[i[0]-1:i[1]]
         ans.sort()
