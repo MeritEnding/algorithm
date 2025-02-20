@@ -1,6 +1,6 @@
 def solution(s):
-    answer = True
-    stack=[]
+    answer=True
+    stack =[]
     
     for i in s:
         if i=='(':
@@ -12,4 +12,5 @@ def solution(s):
                 stack.pop()
     if stack !=[]:
         return False
+    
     return True
