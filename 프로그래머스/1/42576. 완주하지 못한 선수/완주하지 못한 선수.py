@@ -6,5 +6,6 @@ def solution(participant, completion):
         sum+=hash(part)
     for comp in completion:
         sum-=hash(comp)
-    
+        
     return hash_map[sum]
+        
