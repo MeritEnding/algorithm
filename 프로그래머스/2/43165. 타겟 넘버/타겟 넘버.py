@@ -1,6 +1,7 @@
 def solution(numbers, target):
     leaves=[0]
-    result =0
+    result=0
+    
     for i in numbers:
         tmp =[]
         for j in leaves:
