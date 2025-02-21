@@ -1,7 +1,6 @@
 def solution(n, lost, reserve):
-    net_lost =set(lost)- set(reserve)
-    net_reserve= set(reserve)- set(lost)
-
+    net_lost =set(lost)-set(reserve)
+    net_reserve= set(reserve)-set(lost)
     
     answer = n - len(net_lost)
     
@@ -12,5 +11,5 @@ def solution(n, lost, reserve):
         elif i+1 in net_reserve:
             net_reserve.remove(i+1)
             answer+=1
+            
     return answer
-    
