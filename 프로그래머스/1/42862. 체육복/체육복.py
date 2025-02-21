@@ -11,6 +11,4 @@ def solution(n, lost, reserve):
         elif i+1 in net_reserve:
             net_reserve.remove(i+1)
             answer+=1
-            
     return answer
-    
