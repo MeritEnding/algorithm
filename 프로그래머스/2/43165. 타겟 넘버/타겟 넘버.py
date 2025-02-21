@@ -1,6 +1,6 @@
 def solution(numbers, target):
     leaves=[0]
-    result =0
+    result= 0
     for i in numbers:
         tmp =[]
         for j in leaves:
@@ -11,4 +11,5 @@ def solution(numbers, target):
     for i in leaves:
         if i ==target:
             result+=1
+            
     return result
