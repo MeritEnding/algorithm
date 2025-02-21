@@ -3,7 +3,7 @@ def solution(begin, target, words):
     if target not in words:
         return 0
     else:
-        return bfs(begin, target, words)
+        return bfs(begin,target,words)
     
 def bfs(begin, target, words):
     queue =deque()
@@ -12,13 +12,13 @@ def bfs(begin, target, words):
     while queue:
         now, step =queue.popleft()
         
-        if now ==target:
+        if now == target:
             return step
         
         for word in words:
             cnt =0
             for i in range(len(now)):
-                if now[i] != word[i]:
+                if now[i] !=word[i]:
                     cnt+=1
             if cnt ==1:
-                queue.append([word, step+1])
+                queue.append([word,step+1])
