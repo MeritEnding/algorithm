@@ -1,15 +1,17 @@
 from collections import deque
 def solution(prices):
-    price_q =deque(prices)
-    answer=[]
+    answer = []
+    prices_q = deque(prices)
     
-    while price_q:
-        cur_price=price_q.popleft()
+    while prices_q:
+        cur_price = prices_q.popleft()
         time = 0
-        for p in price_q: 
+        for p in prices_q:
             time += 1
-            if cur_price>p:
+            if cur_price > p:
                 break
         answer.append(time)
+        
     return answer
- 
+    
+    return answer
