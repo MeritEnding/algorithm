@@ -1,10 +1,11 @@
 def solution(arr):
-    stack =[arr[0]]
+    stack = [arr[0]]
     
     for i in range(1, len(arr)):
-        if arr[i] == arr[i-1]:
+        if arr[i-1]==arr[i]:
             continue
         else:
             stack.append(arr[i])
             
     return stack
+        
