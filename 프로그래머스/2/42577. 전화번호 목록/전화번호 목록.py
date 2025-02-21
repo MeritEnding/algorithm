@@ -1,16 +1,14 @@
 def solution(phone_book):
-    answer = True
     hash_map={}
     for nums in phone_book:
         hash_map[nums]=1
         
     for nums in phone_book:
-        answer=''
+        answer =''
         for num in nums:
             answer+=num
             
-            if answer in hash_map and answer!=nums:
+            if answer in hash_map and answer !=nums:
                 return False
     return True
     
-    return answer
