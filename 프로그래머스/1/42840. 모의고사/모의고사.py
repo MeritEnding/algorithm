@@ -6,15 +6,15 @@ def solution(answers):
     score=[0,0,0]
     
     for i in range(len(answers)):
-        if answers[i]==student1[i%5]:
+        if answers[i]== student1[i%5]:
             score[0]+=1
-        if answers[i]==student2[i%8]:
+        if answers[i]== student2[i%8]:
             score[1]+=1
         if answers[i]==student3[i%10]:
             score[2]+=1
-            
+    
     for idx, value in enumerate(score):
         if value == max(score):
             answer.append(idx+1)
-            
+
     return answer
