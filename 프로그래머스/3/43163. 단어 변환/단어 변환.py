@@ -4,21 +4,21 @@ def solution(begin, target, words):
         return 0
     else:
         return bfs(begin,target,words)
-    
-def bfs(begin, target, words):
-    queue =deque()
+
+def bfs(begin,target,words):
+    queue= deque()
     queue.append([begin,0])
     
     while queue:
         now, step =queue.popleft()
         
-        if now == target:
+        if now ==target:
             return step
         
         for word in words:
-            cnt =0
+            count =0
             for i in range(len(now)):
-                if now[i] !=word[i]:
-                    cnt+=1
-            if cnt ==1:
+                if now[i] != word[i]:
+                    count+=1
+            if count ==1:
                 queue.append([word,step+1])
