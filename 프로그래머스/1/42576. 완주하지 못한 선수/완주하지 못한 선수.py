@@ -1,9 +1,11 @@
 def solution(participant, completion):
+    
     hash_map ={}
-    sum= 0
+    sum = 0
     for part in participant:
-        hash_map[hash(part)] =part
+        hash_map[hash(part)] = part
         sum += hash(part)
+        
     for comp in completion:
         sum -= hash(comp)
         
