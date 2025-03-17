@@ -1,4 +1,5 @@
 def solution(s):
+    
     stack =[]
     
     for i in s:
