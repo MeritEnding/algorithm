@@ -1,6 +1,7 @@
 from collections import deque
+
 def solution(priorities, location):
-    queue =deque()
+    queue = deque()
     answer =0 
     for i in range(len(priorities)):
         queue.append((priorities[i],i))
