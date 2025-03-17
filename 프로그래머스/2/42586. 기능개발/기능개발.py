@@ -2,6 +2,7 @@ from collections import deque
 import math
 
 def solution(progresses, speeds):
+    
     progresses = deque(progresses)
     speeds = deque(speeds)
     answer =[]
