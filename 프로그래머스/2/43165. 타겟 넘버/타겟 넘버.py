@@ -8,6 +8,7 @@ def solution(numbers, target):
         for j in leaves:
             tmp.append(j+i)
             tmp.append(j-i)
+            
         leaves=tmp
     for i in leaves:
         if i ==target:
