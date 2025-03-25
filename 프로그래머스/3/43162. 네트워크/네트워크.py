@@ -6,6 +6,7 @@ def dfs(n, computers, v, visited):
                 dfs(n, computers, j, visited)
 
 def solution(n, computers):
+    
     answer = 0
     visited=[False]*(n+1)
     result=0
