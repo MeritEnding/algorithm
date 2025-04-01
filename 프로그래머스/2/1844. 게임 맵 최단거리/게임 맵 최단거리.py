@@ -9,10 +9,12 @@ def solution(maps):
     dy = [0,0,-1,1]
     
     def bfs(x,y):
+        
         queue = deque()
         queue.append((x, y))
         
         while queue:
+            
             x, y=queue.popleft()
             for i in range(4):
                 nx = x+dx[i]
