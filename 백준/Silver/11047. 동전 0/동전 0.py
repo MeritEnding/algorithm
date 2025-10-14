@@ -1,16 +1,15 @@
-n, k= map(int,input().split())
+n, k = map(int, input().split())
 
-arr=[]
+count = 0
+coins=[]
+for i in range(n):
+    coins.append(int(input()))
 
-for _ in range(n):
-    arr.append(int(input()))
+coins.sort(reverse=True)
 
-count =0
-arr.sort(reverse=True)
-for coin in arr:
-    if (k//coin) > 0:
-        count  += k//coin
-        k%=coin
+for coin in coins:
+    if (k // coin) >=1:
+        count += k // coin
+        k %= coin
 
 print(count)
-     
